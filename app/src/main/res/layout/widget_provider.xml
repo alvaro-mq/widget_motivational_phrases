@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.WidgetMotivationalPhrases.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.WidgetMotivationalPhrases.AppWidgetContainer"
+    android:background="@drawable/roundstyle">
+
+    <TextView
+        android:id="@+id/appwidget_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bad_script"
+        android:text="Frase"
+        android:textColor="#fff"
+        android:textSize="26sp"
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/tvPhrase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bad_script"
+        android:text="Autor"
+        android:textAlignment="textEnd"
+        android:textColor="#fff"
+        android:textSize="20sp" />
+</LinearLayout>
