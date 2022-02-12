@@ -10,19 +10,21 @@
     <TextView
         android:id="@+id/appwidget_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="20"
         android:fontFamily="@font/bad_script"
         android:text="Frase"
         android:textColor="#fff"
-        android:textSize="26sp"
+        android:autoSizeTextType="uniform"
         android:textStyle="bold|italic" />
     <TextView
         android:id="@+id/tvPhrase"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="60"
         android:fontFamily="@font/bad_script"
         android:text="Autor"
         android:textAlignment="textEnd"
         android:textColor="#fff"
-        android:textSize="20sp" />
+        android:autoSizeTextType="uniform" />
 </LinearLayout>
