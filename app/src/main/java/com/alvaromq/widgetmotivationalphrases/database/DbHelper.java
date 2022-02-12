@@ -10,6 +10,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.alvaromq.widgetmotivationalphrases.Phrase;
+
 import java.io.IOException;
 import java.util.logging.Logger;
 
@@ -85,14 +87,19 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
-    public String getRandomPhrase() {
+    public Phrase getRandomPhrase() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT ID, DESCRIPTION, AUTHOR FROM " + TABLE_PHRASES + " ORDER BY RANDOM() LIMIT 1", null);
         String description = "";
+        String author = "";
+        Phrase phrase = new Phrase();
         if (cursor != null) {
             cursor.moveToFirst();
             description = cursor.getString(cursor.getColumnIndex("DESCRIPTION"));
+            author = cursor.getString(cursor.getColumnIndex("AUTHOR"));
+            phrase.setAuthor(author);
+            phrase.setDescription(description);
         }
-        return description;
+        return phrase;
     }
 }

@@ -16,11 +16,12 @@ public class WidgetProvider extends AppWidgetProvider {
                                 int appWidgetId) {
 
         DbHelper dbHelper = new DbHelper(context);
-        String phrase = dbHelper.getRandomPhrase();
+        Phrase phrase = dbHelper.getRandomPhrase();
+
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_provider);
-        views.setTextViewText(R.id.appwidget_text, phrase);
-
+        views.setTextViewText(R.id.appwidget_text, phrase.getDescription());
+        views.setTextViewText(R.id.tvPhrase, phrase.getAuthor());
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
