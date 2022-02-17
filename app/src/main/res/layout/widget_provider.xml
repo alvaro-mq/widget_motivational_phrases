@@ -7,24 +7,49 @@
     android:theme="@style/Theme.WidgetMotivationalPhrases.AppWidgetContainer"
     android:background="@drawable/roundstyle">
 
-    <TextView
-        android:id="@+id/appwidget_text"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="20"
-        android:fontFamily="@font/bad_script"
-        android:text="Frase"
-        android:textColor="#fff"
-        android:autoSizeTextType="uniform"
-        android:textStyle="bold|italic" />
-    <TextView
-        android:id="@+id/tvPhrase"
+        >
+        <TextView
+            android:id="@+id/appwidget_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/bad_script"
+            android:text="Phrase"
+            android:textColor="#fff"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="18sp"
+            android:autoSizeStepGranularity="2sp"
+            android:padding="5sp"
+            android:textStyle="bold|italic"
+            android:layout_marginBottom="15sp"/>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="60"
-        android:fontFamily="@font/bad_script"
-        android:text="Autor"
-        android:textAlignment="textEnd"
-        android:textColor="#fff"
-        android:autoSizeTextType="uniform" />
+        android:orientation="horizontal"
+        android:layout_weight="55">
+
+        <ImageButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="80"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:src="@drawable/ic_refresh" />
+        <TextView
+            android:id="@+id/tvPhrase"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:fontFamily="@font/bad_script"
+            android:text="Author"
+            android:textAlignment="textEnd"
+            android:textColor="#fff"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMaxTextSize="40sp"/>
+    </LinearLayout>
 </LinearLayout>
