@@ -58,7 +58,7 @@
                     android:autoSizeMaxTextSize="40sp"
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/bad_script"
-                    android:text="Author"
+                    android:text="@string/author"
                     android:textAlignment="textStart"
                     android:textColor="#fff"
                     android:textStyle="bold" />
@@ -71,7 +71,7 @@
                     android:autoSizeMaxTextSize="40sp"
                     android:autoSizeTextType="uniform"
                     android:fontFamily="@font/bad_script"
-                    android:text=".@anonimous"
+                    android:text="@string/nick"
                     android:textAlignment="textStart"
                     android:textColor="#fff" />
             </LinearLayout>
@@ -94,7 +94,7 @@
                 android:autoSizeTextType="uniform"
                 android:fontFamily="@font/bad_script"
                 android:padding="10sp"
-                android:text="Motivational Phrases"
+                android:text="@string/phrase"
                 android:textAlignment="center"
                 android:textColor="#fff"
                 android:textStyle="bold|italic" />
@@ -117,14 +117,14 @@
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="English" />
+            android:text="@string/english" />
 
         <Button
             android:id="@+id/btnSpanish"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Spanish" />
+            android:text="@string/spanish" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 

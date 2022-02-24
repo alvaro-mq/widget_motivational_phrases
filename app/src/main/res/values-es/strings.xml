@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WidgetMotivationalPhrases</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="author">Autor</string>
+    <string name="nick">\@autor</string>
+    <string name="phrase">Frase Motivacional</string>
+    <string name="english">Ingles</string>
+    <string name="spanish">Español</string>
+</resources>

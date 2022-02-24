@@ -2,8 +2,7 @@
     <string name="app_name">WidgetMotivationalPhrases</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="author">Author</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -12,4 +11,8 @@
     <string name="appwidget_text">Cuanta vida te esta costando tu trabajo? </string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
+    <string name="nick">\@author</string>
+    <string name="phrase">Motivational Phrase</string>
+    <string name="english">English</string>
+    <string name="spanish">Spanish</string>
 </resources>
