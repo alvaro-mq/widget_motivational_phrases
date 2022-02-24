@@ -6,14 +6,110 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/llPhrase"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/roundstyle"
+        android:orientation="vertical"
+        android:theme="@style/Theme.WidgetMotivationalPhrases.AppWidgetContainer"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:paddingTop="5dp"
+        android:layout_marginTop="64dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="30"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <FrameLayout
+                android:layout_weight="20"
+                android:id="@+id/speaker_avatar_container"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical">
+                <TextView
+                    android:id="@+id/tvNickAvatarActivity"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:text="AB"
+                    android:textSize="25dp"
+                    android:background="@drawable/circle"
+                    android:textColor="@color/black"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="80"
+                android:orientation="vertical"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/tvAuthorActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="60"
+                    android:autoSizeMaxTextSize="40sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/bad_script"
+                    android:text="Author"
+                    android:textAlignment="textStart"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNickActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="40"
+                    android:autoSizeMaxTextSize="40sp"
+                    android:autoSizeTextType="uniform"
+                    android:fontFamily="@font/bad_script"
+                    android:text=".@anonimous"
+                    android:textAlignment="textStart"
+                    android:textColor="#fff" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="60"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvPhraseActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autoSizeMinTextSize="18sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:fontFamily="@font/bad_script"
+                android:padding="10sp"
+                android:text="Motivational Phrases"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textStyle="bold|italic" />
+        </LinearLayout>
+
+    </LinearLayout>
+
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleButtonGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="263dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/llPhrase"
         app:singleSelection="true">
 
         <Button
