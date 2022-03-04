@@ -7,4 +7,9 @@
     <string name="phrase">Frase Motivacional</string>
     <string name="english">Ingles</string>
     <string name="spanish">Español</string>
+    <string name="language">Idioma:</string>
+    <string name="types">Tipos:</string>
+    <string name="motivational_phrases">Frases motivacionales</string>
+    <string name="self_phrases">Frases de autoestima</string>
+    <string name="bible_phrases">Frases de la biblia</string>
 </resources>

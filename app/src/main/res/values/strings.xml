@@ -15,4 +15,9 @@
     <string name="phrase">Motivational Phrase</string>
     <string name="english">English</string>
     <string name="spanish">Spanish</string>
+    <string name="language">Language:</string>
+    <string name="types">Types:</string>
+    <string name="motivational_phrases">Motivational quotes</string>
+    <string name="self_phrases">Self esteem phrases</string>
+    <string name="bible_phrases">Bible phrases</string>
 </resources>

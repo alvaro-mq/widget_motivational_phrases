@@ -27,41 +27,36 @@ import java.net.URL;
  */
 public class WidgetProvider extends AppWidgetProvider {
 
-    public String ACTION_SHARE = "ACTION_SHARE";
+    public static String ACTION_SHARE = "ACTION_SHARE";
+    public static String ACTION_OPEN_MAIN_ACTIVITY = "ACTION_OPEN_MAIN_ACTIVITY";
+    public static String ACTION_SHARE_MAIN_ACTIVITY = "ACTION_SHARE_MAIN_ACTIVITY";
+
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
         DbHelper dbHelper = new DbHelper(context);
         Phrase phrase = dbHelper.getRandomPhrase();
 
-
-        // Create an intent to launch MainActivity
-        Intent intent = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0 );
-
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_provider);
-        views.setTextViewText(R.id.appwidget_text, phrase.getDescription());
-        views.setTextViewText(R.id.tvPhrase, phrase.getAuthor());
-        views.setTextViewText(R.id.tvNick, generateNick(phrase.getAuthor()));
-        views.setTextViewText(R.id.tvNickAvatar, generateNickAvatar(phrase.getAuthor()));
-        views.setOnClickPendingIntent(R.id.appwidget_text, pendingIntent);
+        views.setTextViewText(R.id.tvDescription, phrase.getDescription());
+        views.setTextViewText(R.id.tvAuthor, phrase.getAuthor());
+        views.setTextViewText(R.id.tvNick, Utils.generateNick(phrase.getAuthor()));
+        views.setTextViewText(R.id.tvNickAvatar, Utils.generateNickAvatar(phrase.getAuthor()));
 
+        // Create an intent to launch MainActivity
+        PendingIntent pendingIntentMainActivity = makeIntentForMainActivity(context, phrase, ACTION_OPEN_MAIN_ACTIVITY);
+        views.setOnClickPendingIntent(R.id.tvDescription, pendingIntentMainActivity);
 
-        Intent intentRefresh = new Intent(context, WidgetProvider.class);
-        intentRefresh.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-        PendingIntent pendingSync = PendingIntent.getBroadcast(context,0, intentRefresh, PendingIntent.FLAG_UPDATE_CURRENT);
-        views.setOnClickPendingIntent(R.id.btnRefresh, pendingSync);
+        // Create an intent to Refresh phrase
+        PendingIntent pendingIntentRefresh = makeIntentRefresh(context);
+        views.setOnClickPendingIntent(R.id.btnRefresh, pendingIntentRefresh);
 
         // Instruct the widget manager to update the widget
 
-        Intent intentActivityMain = new Intent(context, MainActivity.class);
-        intentActivityMain.putExtra("phrase", phrase.getDescription());
-        intentActivityMain.putExtra("author", phrase.getAuthor());
-        intentActivityMain.putExtra("nick", generateNick(phrase.getAuthor()));
-        intentActivityMain.putExtra("nickAvatar", generateNickAvatar(phrase.getAuthor()));
-        PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intentActivityMain, PendingIntent.FLAG_UPDATE_CURRENT);
-        views.setOnClickPendingIntent(R.id.btnShare, pendingIntent2);
+        // Create an intent to launch MainActivity share
+        PendingIntent pendingIntentMainActivityShare = makeIntentForMainActivity(context, phrase, ACTION_SHARE_MAIN_ACTIVITY);
+        views.setOnClickPendingIntent(R.id.btnShare, pendingIntentMainActivityShare);
 
         /*Intent intentShare = new Intent(context, WidgetProvider.class);
         intentShare.putExtra("phrase", phrase.getDescription());
@@ -124,11 +119,21 @@ public class WidgetProvider extends AppWidgetProvider {
         }
     }
 
-    private static String generateNick(String name) {
-        return "@" + name.toLowerCase().replaceAll(" ", "_");
+    private static PendingIntent makeIntentRefresh(Context context) {
+        Intent intentRefresh = new Intent(context, WidgetProvider.class);
+        intentRefresh.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        PendingIntent pendingSync = PendingIntent.getBroadcast(context,0, intentRefresh, PendingIntent.FLAG_UPDATE_CURRENT);
+        return pendingSync;
     }
 
-    private static String generateNickAvatar(String name) {
-        return name.toUpperCase().substring(0, 2);
+    private static PendingIntent makeIntentForMainActivity(Context context, Phrase phrase, String action) {
+        Intent intentActivityMain = new Intent(context, MainActivity.class);
+        intentActivityMain.setAction(action);
+        intentActivityMain.putExtra("phrase", phrase.getDescription());
+        intentActivityMain.putExtra("author", phrase.getAuthor());
+        intentActivityMain.putExtra("nick", Utils.generateNick(phrase.getAuthor()));
+        intentActivityMain.putExtra("nickAvatar", Utils.generateNickAvatar(phrase.getAuthor()));
+        PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intentActivityMain, PendingIntent.FLAG_UPDATE_CURRENT);
+        return  pendingIntent2;
     }
 }

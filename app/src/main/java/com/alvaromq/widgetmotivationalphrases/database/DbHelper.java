@@ -17,6 +17,7 @@ import com.alvaromq.widgetmotivationalphrases.Configuration;
 import com.alvaromq.widgetmotivationalphrases.R;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 public class DbHelper extends SQLiteOpenHelper {
@@ -25,6 +26,7 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "db_mp2.db";
     private static final String TABLE_PHRASES = "phrases";
     private static final String TABLE_CONFIGURATIONS = "configurations";
+    private static final String TABLE_TYPES = "types";
     private final Context fContext;
 
     public DbHelper(@Nullable Context context) {
@@ -38,10 +40,14 @@ public class DbHelper extends SQLiteOpenHelper {
             Log.v("tag", "init create table configurations");
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_CONFIGURATIONS + "(LANGUAGE TEXT NOT NULL, TYPE TEXT NOT NULL)");
 
+            Log.v("tag", "init create table types");
+            sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_TYPES + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, DESCRIPTION_SP TEXT NOT NULL, DESCRIPTION_EN TEXT NOT NULL)");
+
             Log.v("tag", "init create table phrases");
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_PHRASES + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, DESCRIPTION_SP TEXT NOT NULL, DESCRIPTION_EN TEXT NOT NULL, AUTHOR TEXT NOT NULL)");
 
             Log.v("tag", "init insert data");
+            seedsTypes(sqLiteDatabase);
             seedsConfigurations(sqLiteDatabase);
             seedsPhrases(sqLiteDatabase);
             Log.v("tag", "finish insert data");
@@ -64,7 +70,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void seedsConfigurations(SQLiteDatabase sqLiteDatabase) {
         ContentValues values = new ContentValues();
         values.put("LANGUAGE", "SP");
-        values.put("TYPE", "DEFAULT");
+        values.put("TYPE", "1");
         sqLiteDatabase.insert(TABLE_CONFIGURATIONS, null, values);
     }
 
@@ -79,6 +85,20 @@ public class DbHelper extends SQLiteOpenHelper {
             values.put("DESCRIPTION_SP", parts[1]);
             values.put("AUTHOR", parts[2]);
             sqLiteDatabase.insert(TABLE_PHRASES, null, values);
+        }
+    }
+
+    public void seedsTypes(SQLiteDatabase sqLiteDatabase) {
+        ContentValues values = new ContentValues();
+        Resources res = fContext.getResources();
+
+        String[] types = res.getStringArray(R.array.types_array);
+        for (String type: types) {
+            String[] parts = type.split("\\|");
+            values.put("ID", parts[0]);
+            values.put("DESCRIPTION_EN", parts[1]);
+            values.put("DESCRIPTION_SP", parts[2]);
+            sqLiteDatabase.insert(TABLE_TYPES, null, values);
         }
     }
 
@@ -120,5 +140,20 @@ public class DbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         db.execSQL("UPDATE " + TABLE_CONFIGURATIONS + " SET " + column + " = '" + value +"'");
         return true;
+    }
+
+    @SuppressLint("Range")
+    public ArrayList<Type> getTypes() {
+        ArrayList<Type> types = new ArrayList<Type>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT ID, DESCRIPTION_EN, DESCRIPTION_SP FROM " + TABLE_TYPES, null);
+        while(cursor.moveToNext()) {
+            Type type = new Type();
+            type.setId(cursor.getInt(cursor.getColumnIndex("ID")));
+            type.setDescriptionEn(cursor.getString(cursor.getColumnIndex("DESCRIPTION_EN")));
+            type.setDescriptionSp(cursor.getString(cursor.getColumnIndex("DESCRIPTION_SP")));
+            types.add(type);
+        }
+        return types;
     }
 }

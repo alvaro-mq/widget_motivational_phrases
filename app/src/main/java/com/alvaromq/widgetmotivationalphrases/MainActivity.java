@@ -1,53 +1,54 @@
 package com.alvaromq.widgetmotivationalphrases;
 
 import android.annotation.SuppressLint;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
-import com.alvaromq.widgetmotivationalphrases.Configuration;
+import com.alvaromq.widgetmotivationalphrases.database.Type;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
-import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.text.format.DateFormat;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
-import androidx.core.content.FileProvider;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.alvaromq.widgetmotivationalphrases.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileDescriptor;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
     private MaterialButtonToggleGroup buttonToggleGroup;
+    private TextView tvDescription;
+    private TextView tvAuthor;
+    private TextView tvNick;
+    private TextView tvAvatarNick;
 
     @SuppressLint("WrongThread")
     @Override
@@ -59,58 +60,38 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
-
         DbHelper dbHelper = new DbHelper(MainActivity.this);
         Configuration configuration = dbHelper.getConfigurations();
         String language = configuration.getLanguage();
+        String[] typesKeys = configuration.getType().split(",");
 
         buttonToggleGroup = (MaterialButtonToggleGroup) findViewById(R.id.toggleButtonGroup);
         setCheckedButtonGroup(language);
 
+        LinearLayout layout = findViewById(R.id.groupCheckbox);
+        ArrayList<Type> types = dbHelper.getTypes();
+        for (Type type: types) {
+            Log.v("tag", type.getDescriptionEn());
+            CheckBox checkBox = makeCheckbox(type, typesKeys);
+            layout.addView(checkBox);
+        }
 
         Intent intent = getIntent();
-        String phrase = intent.getStringExtra("phrase");
-        String author = intent.getStringExtra("author");
-        String nick = intent.getStringExtra("nick");
-        String avatarNick = intent.getStringExtra("nickAvatar");
-        if (phrase != null) {
-            Log.v("tag", phrase);
-            TextView tvDescription = (TextView) findViewById(R.id.tvPhraseActivity);
-            tvDescription.setText(phrase);
-
-            TextView tvAuthor = (TextView) findViewById(R.id.tvAuthorActivity);
-            tvAuthor.setText(author);
-
-            TextView tvNick = (TextView) findViewById(R.id.tvNickActivity);
-            tvNick.setText(nick);
-
-            TextView tvAvatarNick = (TextView) findViewById(R.id.tvNickAvatarActivity);
-            tvAvatarNick.setText(avatarNick);
-
-            View view = getWindow().getDecorView().findViewById(R.id.llPhrase);
-
-            view.post(new Runnable() {
-                @Override
-                public void run() {
-                    takeScreenshot(view);
-                }
-            });
+        String action = intent.getAction();
+        Phrase phrase = makePhrase(intent);
+        Log.v("tag", action);
+        if (intent.getStringExtra("phrase") != null) {
+            setDefaultConfiguration(phrase);
+            if (WidgetProvider.ACTION_SHARE_MAIN_ACTIVITY.equals(action)) {
+                View view = getWindow().getDecorView().findViewById(R.id.llPhrase);
+                view.post(() -> takeScreenshot(view));
+            }
         }
 
         // ToogleButton for language
-        buttonToggleGroup.addOnButtonCheckedListener(new MaterialButtonToggleGroup.OnButtonCheckedListener() {
-            @Override
-            public void onButtonChecked(MaterialButtonToggleGroup group, int checkedId, boolean isChecked) {
-                if (isChecked) {
-                    if (checkedId == R.id.btnEnglish) {
-                        Log.v("tag", "EN");
-                        saveConfigurationLanguage("EN");
-                    }
-                    if (checkedId == R.id.btnSpanish) {
-                        Log.v("tag", "SP");
-                        saveConfigurationLanguage("SP");
-                    }
-                }
+        buttonToggleGroup.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+            if (isChecked) {
+                validateConfigurationLanguage(checkedId);
             }
         });
     }
@@ -157,6 +138,81 @@ public class MainActivity extends AppCompatActivity {
     private void saveConfigurationLanguage(String language) {
         DbHelper db = new DbHelper(MainActivity.this);
         db.updateConfiguration("LANGUAGE", language);
+    }
+
+    private void saveConfigurationType(String type, boolean isChecked) {
+        DbHelper db = new DbHelper(MainActivity.this);
+        String types = db.getConfigurations().getType();
+        Log.v("tag", types);
+        String[] keys = types.split(",");
+        Set setKeys = new HashSet(Arrays.asList(keys));
+        if (isChecked == true) {
+            setKeys.add(type);
+        } else {
+            setKeys.remove(type);
+        }
+        String typeSave = TextUtils.join(",", setKeys.toArray());
+        Log.v("tag", typeSave);
+        db.updateConfiguration("TYPE", typeSave);
+    }
+
+    private void setDefaultConfiguration(Phrase phrase) {
+        tvDescription = (TextView) findViewById(R.id.tvPhraseActivity);
+        tvDescription.setText(phrase.getDescription());
+
+        tvAuthor = (TextView) findViewById(R.id.tvAuthorActivity);
+        tvAuthor.setText(phrase.getAuthor());
+
+        tvNick = (TextView) findViewById(R.id.tvNickActivity);
+        tvNick.setText(Utils.generateNick(phrase.getAuthor()));
+
+        tvAvatarNick = (TextView) findViewById(R.id.tvNickAvatarActivity);
+        tvAvatarNick.setText(Utils.generateNickAvatar(phrase.getAuthor()));
+    }
+
+    private void validateConfigurationLanguage(int checkedId) {
+        if (checkedId == R.id.btnEnglish) {
+            Log.v("tag", "EN");
+            saveConfigurationLanguage("EN");
+        }
+        if (checkedId == R.id.btnSpanish) {
+            Log.v("tag", "SP");
+            saveConfigurationLanguage("SP");
+        }
+    }
+
+    private Phrase makePhrase(Intent intent) {
+        Phrase phrase = new Phrase();
+        phrase.setDescription(intent.getStringExtra("phrase"));
+        phrase.setAuthor(intent.getStringExtra("author"));
+        return phrase;
+    }
+
+    private CheckBox makeCheckbox(Type type, String[] typesKeys) {
+        CheckBox checkBox = new CheckBox(this);
+        Locale current = getResources().getConfiguration().locale;
+        String language = current.getLanguage();
+        Log.v("tag1", current.getLanguage());
+        Log.v("tag1", type.getDescriptionSp());
+        Log.v("tagy", String.valueOf(language.equals("es")));
+        String description = language.equals("es") ? type.getDescriptionSp() : type.getDescriptionEn();
+        Log.v("tagx", description);
+        checkBox.setText(description);
+        checkBox.setPadding(0,0,0,0);
+        boolean isChecked = Arrays.asList(typesKeys).indexOf(String.valueOf(type.getId())) >= 0;
+        checkBox.setChecked(isChecked);
+        /*if (Arrays.asList(typesKeys).indexOf(String.valueOf(type.getId())) >= 0) {
+            checkBox.setChecked(true);
+        } else {
+            checkBox.setChecked(false);
+        }*/
+        checkBox.setId(View.generateViewId());
+        checkBox.setTag(type.getId());
+        checkBox.setOnClickListener(view -> {
+            boolean checked = ((CheckBox) view).isChecked();
+            saveConfigurationType(String.valueOf(view.getTag()), checked);
+        });
+        return checkBox;
     }
 
     @Override

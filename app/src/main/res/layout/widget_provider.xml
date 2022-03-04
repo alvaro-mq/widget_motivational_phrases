@@ -16,7 +16,7 @@
         >
         <FrameLayout
             android:layout_weight="20"
-            android:id="@+id/speaker_avatar_container"
+            android:id="@+id/avatarContainer"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_gravity="center_vertical">
@@ -38,7 +38,7 @@
             android:layout_weight="80"
             android:weightSum="100">
             <TextView
-                android:id="@+id/tvPhrase"
+                android:id="@+id/tvAuthor"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="60"
@@ -70,7 +70,7 @@
         android:orientation="horizontal"
         android:layout_weight="60">
         <TextView
-            android:id="@+id/appwidget_text"
+            android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/bad_script"
