@@ -13,6 +13,7 @@
         android:layout_weight="25"
         android:weightSum="100"
         android:orientation="horizontal"
+        android:baselineAligned="false"
         >
         <FrameLayout
             android:layout_weight="20"
@@ -97,6 +98,7 @@
             android:scaleType="fitCenter"
             android:background="@null"
             android:padding="5sp"
+            android:contentDescription="@string/refresh"
             android:src="@drawable/ic_refresh" />
         <ImageButton
             android:id="@+id/btnShare"
@@ -106,6 +108,7 @@
             android:scaleType="fitCenter"
             android:background="@null"
             android:padding="5sp"
+            android:contentDescription="@string/share"
             android:src="@drawable/ic_share" />
     </LinearLayout>
 </LinearLayout>

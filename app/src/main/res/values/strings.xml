@@ -20,4 +20,6 @@
     <string name="motivational_phrases">Motivational quotes</string>
     <string name="self_phrases">Self esteem phrases</string>
     <string name="bible_phrases">Bible phrases</string>
+    <string name="refresh">Refresh</string>
+    <string name="share">Share</string>
 </resources>

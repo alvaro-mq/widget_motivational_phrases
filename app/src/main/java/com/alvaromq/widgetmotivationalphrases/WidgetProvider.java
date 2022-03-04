@@ -7,20 +7,11 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.ImageButton;
 import android.widget.RemoteViews;
 
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.alvaromq.widgetmotivationalphrases.database.Phrase;
 
 /**
  * Implementation of App Widget functionality.
@@ -35,7 +26,9 @@ public class WidgetProvider extends AppWidgetProvider {
                                 int appWidgetId) {
 
         DbHelper dbHelper = new DbHelper(context);
-        Phrase phrase = dbHelper.getRandomPhrase();
+        Configuration configuration = dbHelper.getConfigurations();
+        String language = configuration.getLanguage();
+        Phrase phrase = dbHelper.getRandomPhrase(language);
 
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_provider);
