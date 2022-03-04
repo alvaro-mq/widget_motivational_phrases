@@ -1,4 +1,4 @@
-package com.alvaromq.widgetmotivationalphrases;
+package com.alvaromq.widgetmotivationalphrases.database;
 
 public class Configuration {
     public String getLanguage() {

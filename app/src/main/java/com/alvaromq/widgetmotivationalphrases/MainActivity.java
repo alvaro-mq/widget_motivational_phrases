@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.alvaromq.widgetmotivationalphrases.database.Configuration;
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
 import com.alvaromq.widgetmotivationalphrases.database.Phrase;
 import com.alvaromq.widgetmotivationalphrases.database.Type;

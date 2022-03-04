@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import com.alvaromq.widgetmotivationalphrases.database.Configuration;
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
 import com.alvaromq.widgetmotivationalphrases.database.Phrase;
 

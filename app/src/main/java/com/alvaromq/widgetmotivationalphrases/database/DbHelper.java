@@ -12,7 +12,6 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.alvaromq.widgetmotivationalphrases.Configuration;
 import com.alvaromq.widgetmotivationalphrases.R;
 
 import java.io.IOException;
