@@ -1,4 +1,4 @@
-package com.alvaromq.widgetmotivationalphrases;
+package com.alvaromq.widgetmotivationalphrases.database;
 
 public class Phrase {
     public String getDescription() {
@@ -20,6 +20,16 @@ public class Phrase {
     }
 
     private String author;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
 
     public Phrase() {
 

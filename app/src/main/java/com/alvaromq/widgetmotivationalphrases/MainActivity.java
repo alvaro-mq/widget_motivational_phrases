@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
+import com.alvaromq.widgetmotivationalphrases.database.Phrase;
 import com.alvaromq.widgetmotivationalphrases.database.Type;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.button.MaterialButtonToggleGroup;
@@ -18,8 +19,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import com.alvaromq.widgetmotivationalphrases.databinding.ActivityMainBinding;
@@ -28,7 +27,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import java.io.File;

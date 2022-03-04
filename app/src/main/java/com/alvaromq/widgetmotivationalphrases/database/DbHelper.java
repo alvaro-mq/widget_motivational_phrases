@@ -12,13 +12,11 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.alvaromq.widgetmotivationalphrases.Phrase;
 import com.alvaromq.widgetmotivationalphrases.Configuration;
 import com.alvaromq.widgetmotivationalphrases.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 public class DbHelper extends SQLiteOpenHelper {
 
@@ -103,18 +101,19 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
-    public Phrase getRandomPhrase() {
+    public Phrase getRandomPhrase(String language) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT ID, DESCRIPTION_SP, AUTHOR FROM " + TABLE_PHRASES + " ORDER BY RANDOM() LIMIT 1", null);
-        String description = "";
-        String author = "";
+        Cursor cursor = db.rawQuery("SELECT ID, DESCRIPTION_SP, DESCRIPTION_EN, AUTHOR FROM " + TABLE_PHRASES + " ORDER BY RANDOM() LIMIT 1", null);
         Phrase phrase = new Phrase();
         if (cursor != null) {
             cursor.moveToFirst();
-            description = "“" + cursor.getString(cursor.getColumnIndex("DESCRIPTION_SP")) + "”";
-            author = cursor.getString(cursor.getColumnIndex("AUTHOR"));
-            phrase.setAuthor(author);
+            int id = cursor.getInt(cursor.getColumnIndex("ID"));
+            String nameColumnDescription = language.equals("SP") ? "DESCRIPTION_SP" : "DESCRIPTION_EN";
+            String description = " “" + cursor.getString(cursor.getColumnIndex(nameColumnDescription)) + "” ";
+            String author = cursor.getString(cursor.getColumnIndex("AUTHOR"));
+            phrase.setId(id);
             phrase.setDescription(description);
+            phrase.setAuthor(author);
         }
         return phrase;
     }
