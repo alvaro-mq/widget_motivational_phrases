@@ -1,6 +1,8 @@
 package com.alvaromq.widgetmotivationalphrases.database;
 
-public class Configuration {
+import java.io.Serializable;
+
+public class Configuration implements Serializable {
     public String getLanguage() {
         return language;
     }
