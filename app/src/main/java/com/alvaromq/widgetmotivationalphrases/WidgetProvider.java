@@ -4,11 +4,14 @@ import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 import com.alvaromq.widgetmotivationalphrases.database.Configuration;
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
@@ -22,14 +25,23 @@ public class WidgetProvider extends AppWidgetProvider {
     public static String ACTION_SHARE = "ACTION_SHARE";
     public static String ACTION_OPEN_MAIN_ACTIVITY = "ACTION_OPEN_MAIN_ACTIVITY";
     public static String ACTION_SHARE_MAIN_ACTIVITY = "ACTION_SHARE_MAIN_ACTIVITY";
+    public static String ACTION_COPY = "ACTION_COPY";
+
+    private static int idPhrase;
+    public static void updateAppWidgets(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+        for (int appWidgetId: appWidgetIds) {
+            updateAppWidget(context, appWidgetManager, appWidgetId, true);
+        }
+    }
+
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
-                                int appWidgetId) {
-
+                                int appWidgetId, Boolean isEventMainActivity) {
         DbHelper dbHelper = new DbHelper(context);
         Configuration configuration = dbHelper.getConfigurations();
         String language = configuration.getLanguage();
-        Phrase phrase = dbHelper.getRandomPhrase(language);
+        Phrase phrase = isEventMainActivity != null ? dbHelper.getPhraseForId(idPhrase, language) : dbHelper.getRandomPhrase(language);
+        idPhrase = phrase.getId();
 
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_provider);
@@ -60,15 +72,20 @@ public class WidgetProvider extends AppWidgetProvider {
         PendingIntent.getActivity(context, 0, intentShare, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.btnShare, pendingShare);*/
 
-        appWidgetManager.updateAppWidget(appWidgetId, views);
+        Intent intentCopy = new Intent(context, WidgetProvider.class);
+        intentCopy.putExtra("phrase", phrase.getDescription());
+        intentCopy.setAction(ACTION_COPY);
+        PendingIntent pendingCopy = PendingIntent.getBroadcast(context, 0, intentCopy, PendingIntent.FLAG_UPDATE_CURRENT);
+        views.setOnClickPendingIntent(R.id.btnCopy, pendingCopy);
 
+        appWidgetManager.updateAppWidget(appWidgetId, views);
     }
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
         for (int appWidgetId : appWidgetIds) {
-            updateAppWidget(context, appWidgetManager, appWidgetId);
+            updateAppWidget(context, appWidgetManager, appWidgetId, null);
         }
     }
 
@@ -110,6 +127,13 @@ public class WidgetProvider extends AppWidgetProvider {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             context.startActivity(shareIntent);
+        } else if (ACTION_COPY.equals(intent.getAction())) {
+            String phrase = intent.getStringExtra("phrase");
+            Log.v("tag", phrase);
+            ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("text",  phrase);
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(context,R.string.clipboard, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -125,8 +149,6 @@ public class WidgetProvider extends AppWidgetProvider {
         intentActivityMain.setAction(action);
         intentActivityMain.putExtra("phrase", phrase.getDescription());
         intentActivityMain.putExtra("author", phrase.getAuthor());
-        intentActivityMain.putExtra("nick", Utils.generateNick(phrase.getAuthor()));
-        intentActivityMain.putExtra("nickAvatar", Utils.generateNickAvatar(phrase.getAuthor()));
         PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intentActivityMain, PendingIntent.FLAG_UPDATE_CURRENT);
         return  pendingIntent2;
     }

@@ -94,17 +94,29 @@
             android:id="@+id/btnRefresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="50"
+            android:layout_weight="33"
             android:scaleType="fitCenter"
             android:background="@null"
             android:padding="5sp"
             android:contentDescription="@string/refresh"
             android:src="@drawable/ic_refresh" />
+
+        <ImageButton
+            android:id="@+id/btnCopy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:padding="5sp"
+            android:contentDescription="@string/share"
+            android:src="@drawable/ic_copy" />
+
         <ImageButton
             android:id="@+id/btnShare"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="50"
+            android:layout_weight="33"
             android:scaleType="fitCenter"
             android:background="@null"
             android:padding="5sp"

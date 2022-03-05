@@ -22,4 +22,5 @@
     <string name="bible_phrases">Bible phrases</string>
     <string name="refresh">Refresh</string>
     <string name="share">Share</string>
+    <string name="clipboard">Copied to clipboard</string>
 </resources>
