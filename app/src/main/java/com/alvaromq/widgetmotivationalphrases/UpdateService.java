@@ -25,7 +25,7 @@ public class UpdateService extends IntentService {
         super("UpdateService");
     }
 
-    public static void startActionUpdateWidget(Context context, Configuration configuration) {
+    public static void startActionUpdateWidget(Context context) {
         Intent intent = new Intent(context, UpdateService.class);
         intent.setAction(ACTION_EVENT);
         context.startService(intent);

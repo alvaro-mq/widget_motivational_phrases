@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
     private void saveConfigurationLanguage(String language) {
         DbHelper db = new DbHelper(MainActivity.this);
         db.updateConfiguration("LANGUAGE", language);
+        UpdateService.startActionUpdateWidget(MainActivity.this);
     }
 
     private void saveConfigurationType(String type, boolean isChecked) {
@@ -153,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         String typeSave = TextUtils.join(",", setKeys.toArray());
         Log.v("tag", typeSave);
         db.updateConfiguration("TYPE", typeSave);
+        UpdateService.startActionUpdateWidget(MainActivity.this);
     }
 
     private void setDefaultConfiguration(Phrase phrase) {
@@ -170,12 +172,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void validateConfigurationLanguage(int checkedId) {
+        Configuration configuration = new Configuration();
         if (checkedId == R.id.btnEnglish) {
             Log.v("tag", "EN");
+            configuration.setLanguage("EN");;
             saveConfigurationLanguage("EN");
         }
         if (checkedId == R.id.btnSpanish) {
             Log.v("tag", "SP");
+            configuration.setLanguage("SP");
             saveConfigurationLanguage("SP");
         }
     }
