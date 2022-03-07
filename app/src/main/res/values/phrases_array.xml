@@ -1,55 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="phrases_array">
-        <item>Be the change you wish to see in the world.|Sé el cambio que deseas ver en el mundo.|Mahatma Gandhi</item>
-        <item>If you can dream it, you can do it.|Si puedes soñarlo, puedes hacerlo.|Walt Disney</item>
-        <item>Once you choose hope, anything’s possible.|Cuando eliges la esperanza, todo es posible.|Christopher Reeve</item>
-        <item>Be yourself; everyone else is already taken.|Sé tu mismo, todos los demás ya están ocupados.|Oscar Wilde</item>
-        <item>Try to be a rainbow in someone’s cloud|Trata de ser el arcoíris en la nube de otra persona.|Maya Angelou</item>
-        <item>Well done is better than well said.|Bien hecho es mejor que bien dicho.|Benjamin Franklin</item>
-        <item>The hard days are what make you stronger.|Los días difíciles son los que te hacen más fuerte.|Aly Raisman</item>
-        <item>If you believe it’ll work out, you’ll see opportunities. If you don’t believe it’ll work out, you’ll see obstacles.|Si crees que funcionará, verás oportunidades. Si no crees que funcionará, verás obstáculos.|Wayne Dyer</item>
-        <item>Keep your eyes on the stars, and your feet on the ground.|Mantén tus ojos en las estrellas, y tus pies en la tierra.|Theodore Roosevelt</item>
-        <item>You’ve got to get up every morning with determination if you’re going to go to bed with satisfaction.|Tienes que levantarte todas las mañanas con determinación si te vas a acostar con satisfacción.|George Lorimer</item>
-        <item>In a gentle way, you can shake the world.|De una manera sutil, tienes el poder de mover el mundo.|Mahatma Gandhi</item>
-        <item>If opportunity doesn’t knock, build a door.|Si las oportunidades no tocan, construye una puerta.|Kurt Cobain</item>
-        <item>Don’t be pushed around by the fears in your mind. Be led by the dreams in your heart.|No te dejes empujar por los miedos de tu mente. Déjate llevar por los sueños en tu corazón.|Roy T. Bennett</item>
-        <item>Don’t limit your challenges. Challenge your limits.|No limites tus desafíos. Desafía tus límites.|Jerry Dunn</item>
-        <item>Whenever you find yourself doubting how far you can go, just remember how far you have come.|Cuando te encuentres dudando de lo lejos que puedes llegar, recuerda lo lejos que has llegado.|N.R. Walker</item>
-        <item>In the middle of every difficulty lies opportunity.|En medio de cada dificultad se encuentra una oportunidad.|Albert Einstein</item>
-        <item>Nothing is impossible, the word itself says ‘I’m possible’!|¡Nada es imposible, la palabra misma dice “soy posible”!|Audrey Hepburn</item>
-        <item>Do what you feel in your heart to be right – for you’ll be criticized anyway.|Haz lo que sientas en tu corazón que es correcto, porque de todos modos te criticarán.|Eleanor Roosevelt</item>
-        <item>Always do what you are afraid to do.|Siempre haz lo que te da miedo hacer.|Ralph Waldo Emerson</item>
-        <item>Whatever you are, be a good one.|Sea lo que seas, sé uno bueno.|Abraham Lincoln</item>
-        <item>Magic is believing in yourself. If you can make that happen, you can make anything happen.|La magia es creer en ti mismo. Si puedes hacer que eso suceda, puedes hacer que suceda cualquier cosa.|Johann Wolfgang Von Goethe</item>
-        <item>Don’t be afraid to give up the good to go for the great.|No tengas miedo de renunciar a lo bueno para ir a por lo mejor.|John D. Rockefeller</item>
-        <item>Go the extra mile. It’s never crowded there.|Ve una milla extra. Allí nunca hay mucha gente.|Dr. Wayne D. Dyer</item>
-        <item>What defines us is how well we rise after falling.|Lo que nos define es lo bien que nos levantamos después de caer.|Lionel from Maid in Manhattan Movie</item>
-        <item>Wherever you go, go with all your heart.|Vayas donde vayas, ve con todo tu corazón.|Confucius</item>
-        <item>Turn your wounds into wisdom.|Transforma tus heridas en sabiduría.|Oprah</item>
-        <item>We can do anything we want to if we stick to it long enough.|Podemos hacer lo que queramos si nos atenemos a ello el tiempo suficiente.|Helen Keller</item>
-        <item>Nothing can dim the light that shines from within.|Nada puede atenuar la luz que brilla desde adentro.|Maya Angelou</item>
-        <item>Do the right thing even when no one is looking.|Haz lo correcto incluso cuando nadie te esté mirando.|C.S. Lewis</item>
-        <item>It’s not what happens to you but how you react to it that matters.|Lo importante no es lo que te sucede, sino cómo reaccionas a lo que te sucede.|Epictetus</item>
-        <item>You don’t have to be perfect to be amazing.|No tienes que ser perfecta para ser asombrosa.|Anónimo</item>
-        <item>The best way to predict your future is to create it.|La mejor forma de predecir tu futuro es creándolo.|Abraham Lincoln</item>
-        <item>Don’t watch the clock; do what it does. Keep going.|No mire el reloj; haz lo que hace. Sigue adelante.|Sam Levenson</item>
-        <item>You must do the kind of things you think you cannot do.|Debe hacer el tipo de cosas que crees que no puedes hacer.|Eleanor Roosevelt</item>
-        <item>When you know your worth, no one can make you feel worthless.|Cuando conoces tu valor, nadie puede hacerte sentir inútil.|Anónimo</item>
-        <item>Make your fear of losing your greatest motivator.|Haz el miedo a perder tu mayor motivación.|Anónimo</item>
-        <item>Stop being afraid of what could go wrong, and start being excited of what could go right.|Deja de temerle a lo que podría salir mal y emociónate por lo que podría salir bien.|Tony Robbins</item>
-        <item>I’m not a product of my circumstances. I am a product of my decisions.|No soy producto de mis circunstancias. Soy producto de mis decisiones.|Stephen R. Covey</item>
-        <item>If it doesn’t challenge you, it doesn’t change you.|Si no te desafía, no te cambia.|Fred DeVito</item>
-        <item>You can do anything you set your mind to.|Puedes hacer cualquier cosa que te propongas.|Benjamin Franklin</item>
-        <item>You never know what you can do until you try.|Nunca sabes lo que puedes hacer hasta que lo intentas.|William Cobbett</item>
-        <item>Twenty years from now you’ll be more disappointed by the things you did not do than the ones you did.|Dentro de veinte años estarás más decepcionado por las cosas que no hiciste que por las que hiciste.|Mark Twain</item>
-        <item>It isn’t where you came from. It’s where you’re going that counts.|No es de donde vienes. Lo que cuenta es a dónde vas.|Ella Fitzgerald</item>
-        <item>If I cannot do great things, I can do small things in a great way.|Si no puedo hacer grandes cosas, puedo hacer pequeñas cosas de una manera excelente.|Martin Luther King Jr.</item>
-        <item>Oh yes, the past can hurt. But the way I see it, you can either run from it or learn from it.|Oh, sí, el pasado puede doler. Pero a mi modo de ver, puedes huir de él o aprender de él.|Rafiki from The Lion King</item>
-        <item>Spend a little more time trying to make something of yourself and a little less time trying to impress people.|Dedica un poco más de tiempo intentando hacer algo de ti mismo y un poco menos de tiempo tratanto de impresionar a los demás.|The Breakfast Club</item>
-        <item>No one has ever made a difference by being like everyone else.|Nadie ha hecho una diferencia siendo igual a todos los demás.|The Greatest Showman</item>
-        <item>Don’t tell everyone your plans, instead show them your results.|No les cuentes a todos tus planes, en vez de ello, muéstrales tus resultados.|Anónimo</item>
-        <item>Be so good they can’t ignore you.|Sé tan bueno que no puedan ignorarte.|Steve Martin</item>
-        <item>How much of your life is your salary costing you?|¿Cuánta vida te está costando tu sueldo?|Anónimo</item>
+        <item>Be the change you wish to see in the world.|Sé el cambio que deseas ver en el mundo.|Mahatma Gandhi|1</item>
+        <item>If you can dream it, you can do it.|Si puedes soñarlo, puedes hacerlo.|Walt Disney|1</item>
+        <item>Once you choose hope, anything’s possible.|Cuando eliges la esperanza, todo es posible.|Christopher Reeve|1</item>
+        <item>Be yourself; everyone else is already taken.|Sé tu mismo, todos los demás ya están ocupados.|Oscar Wilde|1</item>
+        <item>Try to be a rainbow in someone’s cloud|Trata de ser el arcoíris en la nube de otra persona.|Maya Angelou|1</item>
+        <item>Well done is better than well said.|Bien hecho es mejor que bien dicho.|Benjamin Franklin|1</item>
+        <item>The hard days are what make you stronger.|Los días difíciles son los que te hacen más fuerte.|Aly Raisman|1</item>
+        <item>If you believe it’ll work out, you’ll see opportunities. If you don’t believe it’ll work out, you’ll see obstacles.|Si crees que funcionará, verás oportunidades. Si no crees que funcionará, verás obstáculos.|Wayne Dyer|1</item>
+        <item>Keep your eyes on the stars, and your feet on the ground.|Mantén tus ojos en las estrellas, y tus pies en la tierra.|Theodore Roosevelt|1</item>
+        <item>You’ve got to get up every morning with determination if you’re going to go to bed with satisfaction.|Tienes que levantarte todas las mañanas con determinación si te vas a acostar con satisfacción.|George Lorimer|1</item>
+        <item>In a gentle way, you can shake the world.|De una manera sutil, tienes el poder de mover el mundo.|Mahatma Gandhi|1</item>
+        <item>If opportunity doesn’t knock, build a door.|Si las oportunidades no tocan, construye una puerta.|Kurt Cobain|1</item>
+        <item>Don’t be pushed around by the fears in your mind. Be led by the dreams in your heart.|No te dejes empujar por los miedos de tu mente. Déjate llevar por los sueños en tu corazón.|Roy T. Bennett|1</item>
+        <item>Don’t limit your challenges. Challenge your limits.|No limites tus desafíos. Desafía tus límites.|Jerry Dunn|1</item>
+        <item>Whenever you find yourself doubting how far you can go, just remember how far you have come.|Cuando te encuentres dudando de lo lejos que puedes llegar, recuerda lo lejos que has llegado.|N.R. Walker|1</item>
+        <item>In the middle of every difficulty lies opportunity.|En medio de cada dificultad se encuentra una oportunidad.|Albert Einstein|1</item>
+        <item>Nothing is impossible, the word itself says ‘I’m possible’!|¡Nada es imposible, la palabra misma dice “soy posible”!|Audrey Hepburn|1</item>
+        <item>Do what you feel in your heart to be right – for you’ll be criticized anyway.|Haz lo que sientas en tu corazón que es correcto, porque de todos modos te criticarán.|Eleanor Roosevelt|1</item>
+        <item>Always do what you are afraid to do.|Siempre haz lo que te da miedo hacer.|Ralph Waldo Emerson|1</item>
+        <item>Whatever you are, be a good one.|Sea lo que seas, sé uno bueno.|Abraham Lincoln|1</item>
+        <item>Magic is believing in yourself. If you can make that happen, you can make anything happen.|La magia es creer en ti mismo. Si puedes hacer que eso suceda, puedes hacer que suceda cualquier cosa.|Johann Wolfgang Von Goethe|1</item>
+        <item>Don’t be afraid to give up the good to go for the great.|No tengas miedo de renunciar a lo bueno para ir a por lo mejor.|John D. Rockefeller|1</item>
+        <item>Go the extra mile. It’s never crowded there.|Ve una milla extra. Allí nunca hay mucha gente.|Dr. Wayne D. Dyer|1</item>
+        <item>What defines us is how well we rise after falling.|Lo que nos define es lo bien que nos levantamos después de caer.|Lionel from Maid in Manhattan Movie|1</item>
+        <item>Wherever you go, go with all your heart.|Vayas donde vayas, ve con todo tu corazón.|Confucius|1</item>
+        <item>Turn your wounds into wisdom.|Transforma tus heridas en sabiduría.|Oprah|1</item>
+        <item>We can do anything we want to if we stick to it long enough.|Podemos hacer lo que queramos si nos atenemos a ello el tiempo suficiente.|Helen Keller|1</item>
+        <item>Nothing can dim the light that shines from within.|Nada puede atenuar la luz que brilla desde adentro.|Maya Angelou|1</item>
+        <item>Do the right thing even when no one is looking.|Haz lo correcto incluso cuando nadie te esté mirando.|C.S. Lewis|1</item>
+        <item>It’s not what happens to you but how you react to it that matters.|Lo importante no es lo que te sucede, sino cómo reaccionas a lo que te sucede.|Epictetus|1</item>
+        <item>You don’t have to be perfect to be amazing.|No tienes que ser perfecta para ser asombrosa.|Anónimo|1</item>
+        <item>The best way to predict your future is to create it.|La mejor forma de predecir tu futuro es creándolo.|Abraham Lincoln|1</item>
+        <item>Don’t watch the clock; do what it does. Keep going.|No mire el reloj; haz lo que hace. Sigue adelante.|Sam Levenson|1</item>
+        <item>You must do the kind of things you think you cannot do.|Debe hacer el tipo de cosas que crees que no puedes hacer.|Eleanor Roosevelt|1</item>
+        <item>When you know your worth, no one can make you feel worthless.|Cuando conoces tu valor, nadie puede hacerte sentir inútil.|Anónimo|1</item>
+        <item>Make your fear of losing your greatest motivator.|Haz el miedo a perder tu mayor motivación.|Anónimo|1</item>
+        <item>Stop being afraid of what could go wrong, and start being excited of what could go right.|Deja de temerle a lo que podría salir mal y emociónate por lo que podría salir bien.|Tony Robbins|1</item>
+        <item>I’m not a product of my circumstances. I am a product of my decisions.|No soy producto de mis circunstancias. Soy producto de mis decisiones.|Stephen R. Covey|1</item>
+        <item>If it doesn’t challenge you, it doesn’t change you.|Si no te desafía, no te cambia.|Fred DeVito|1</item>
+        <item>You can do anything you set your mind to.|Puedes hacer cualquier cosa que te propongas.|Benjamin Franklin|1</item>
+        <item>You never know what you can do until you try.|Nunca sabes lo que puedes hacer hasta que lo intentas.|William Cobbett|1</item>
+        <item>Twenty years from now you’ll be more disappointed by the things you did not do than the ones you did.|Dentro de veinte años estarás más decepcionado por las cosas que no hiciste que por las que hiciste.|Mark Twain|1</item>
+        <item>It isn’t where you came from. It’s where you’re going that counts.|No es de donde vienes. Lo que cuenta es a dónde vas.|Ella Fitzgerald|1</item>
+        <item>If I cannot do great things, I can do small things in a great way.|Si no puedo hacer grandes cosas, puedo hacer pequeñas cosas de una manera excelente.|Martin Luther King Jr.|1</item>
+        <item>Oh yes, the past can hurt. But the way I see it, you can either run from it or learn from it.|Oh, sí, el pasado puede doler. Pero a mi modo de ver, puedes huir de él o aprender de él.|Rafiki from The Lion King|1</item>
+        <item>Spend a little more time trying to make something of yourself and a little less time trying to impress people.|Dedica un poco más de tiempo intentando hacer algo de ti mismo y un poco menos de tiempo tratanto de impresionar a los demás.|The Breakfast Club|1</item>
+        <item>No one has ever made a difference by being like everyone else.|Nadie ha hecho una diferencia siendo igual a todos los demás.|The Greatest Showman|1</item>
+        <item>Don’t tell everyone your plans, instead show them your results.|No les cuentes a todos tus planes, en vez de ello, muéstrales tus resultados.|Anónimo|1</item>
+        <item>Be so good they can’t ignore you.|Sé tan bueno que no puedan ignorarte.|Steve Martin|1</item>
+        <item>How much of your life is your salary costing you?|¿Cuánta vida te está costando tu sueldo?|Anónimo|1</item>
+        <item>Get more confidence by doing things that excite and frighten you.|Obtén más confianza haciendo cosas que te emocionen y te asusten.|Jessica Williams|2</item>
+        <item>Confidence comes with maturity, being more accepting of yourself.|La confianza viene con la madurez, siendo más aceptado contigo mismo.|Nicole Scherzinger|2</item>
+        <item>No one can make you feel inferior without your consent.|Nadie puede hacerte sentir inferior sin tu consentimiento.|Eleanor Roosevelt|2</item>
+        <item>Don’t take anything for granted. If you don’t believe in yourself, nobody else will. Have a little more confidence|No des nada por sentado. Si no crees en ti mismo, nadie más lo hará. Ten un poco más de confianza|Cathy Moriarty|2</item>
+        <item>It is confidence in our bodies, minds, and spirits that allows us to keep looking for new adventures.|Es la confianza en nuestros cuerpos, mentes y espíritus lo que nos permite seguir buscando nuevas aventuras.|Oprah Winfrey|2</item>
+        <item>Talk to yourself like you would to someone you love.|Háblate a ti mismo como lo harías con alguien a quien amas.|Brene Brown|2</item>
+        <item>I think confidence is a true form of beauty.|Creo que la confianza es una verdadera forma de belleza.|Becky G|2</item>
+        <item>Find what makes you feel comfortable. The confidence you wear your clothes in is what’s really going to shine.|Encuentra lo que te hace sentir cómodo@. La confianza en la que usas tu ropa es lo que realmente va a brillar.|Hayley Hasselhoff|2</item>
+        <item>Don’t live down to expectations. Go out there and do something remarkable.|No vivas por debajo de las expectativas. Sal ahí fuera y haz algo inolvidable.|Wendy Wasserstein|2</item>
+        <item>Life is ten percent what you experience and ninety percent how you respond to it.|La vida es diez por ciento lo que experimentas y noventa por ciento cómo respondes a ello.|Dorothy M.|2</item>
+        <item>I think the best way to have confidence is not to allow everyone else’s insecurities to be your own.|Creo que la mejor manera de tener confianza es no permitir que las inseguridades de los demás sean las tuyas.|Jessie J|2</item>
+        <item>Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.|El optimismo es la fé que dirige al éxito. No se puede hacer nada sin esperanza ni confianza.|Helen Keller|2</item>
+        <item>Confidence is the most beautiful thing you can possess.|La confianza es lo más hermoso que puedes poseer.|Sabrina Carpenter|2</item>
+        <item>You wouldn’t worry so much about what others think of you if you realized how seldom they do.|No te preocuparías tanto por lo que los demás piensan de ti si te dieras cuenta de lo poco que lo hacen.|Eleanor Roosevelt|2</item>
+        <item>To love oneself is the beginning of a lifelong romance.|Amarse a uno mismo es el comienzo de un romance para toda la vida.|Oscar Wilde|2</item>
+        <item>Never bend your head. Hold it high. Look the world straight in the eye.|Nunca agaches la cabeza. Mantenlo en alto. Mira el mundo directamente a los ojos.|Helen Keller|2</item>
+        <item>You’re always with yourself, so you might as well enjoy the company.|Siempre estás contigo mismo, por lo que también podrías disfrutar de la compañía.|Diane Von Furstenberg|2</item>
+        <item>I am my own experiment. I am my own work of art.|Soy mi propio experimento. Soy mi propia obra de arte.|Madonna|2</item>
+        <item>The worst loneliness is to not be comfortable with yourself.|La peor soledad es no estar a gusto con uno mismo.|Mark Twain|2</item>
+        <item>Never let the opinion of another affect your opinion of yourself.|Nunca dejes que la opinión de otro afecte la opinión que tienes de ti mismo.|Teresa Mummert|2</item>
+        <item>Behind every successful woman is herself.|Tras cada mujer exitosa está ella misma.|Bart Jackson|2</item>
+        <item>Above All, Be the Heroine Of Your Life, Not The Victim.|Sobre todo, sé la heroína de tu vida, no la víctima.|Nora Ephron|2</item>
+        <item>Confidence. If you have it, you can make anything look good.|Confianza. Si lo tienes, puedes hacer que cualquier cosa se vea bien.|Diane von Furstenberg|2</item>
+        <item>Be the type of person that you want to meet.|Sé el tipo de persona que quieres conocer.|Tom McCallum|2</item>
+        <item>You’re Allowed To Scream, You’re Allowed To Cry, But Do Not Give Up.|Tienes permitido gritar, puedes llorar, pero no te rindas.|Anónimo|2</item>
+        <item>She Needed A Hero. So That’s What She Became.|Ella necesitaba un héroe. Así que eso es en lo que se convirtió.|Madame Zenista|2</item>
+        <item>Nothing Can Dim The Light That Shines From Within.|Nada puede atenuar la luz que brilla desde adentro.|Maya Angelou|2</item>
+        <item>Beauty Begins The Moment You Decide To Be Yourself|La belleza comienza en el momento en que decides ser tú mismo|Gabrielle|2</item>
+        <item>Self-love transforms and empowers.|El amor propio transforma y empodera.|Anónimo|2</item>
+        <item>Improving is an act of love|Mejorar es un acto de amor|Anónimo|2</item>
+        <item>You deserve to have self-love to spare and not leftover love. Starting with self-love|Mereces tener el amor propio de sobra y no sobras de amor. Empezando por el amor propio|Anónimo|2</item>
+        <item>It’s okay to let some people go.|Está bien dejar a algunas personas ir.|Anónimo|2</item>
+        <item>Be that love you love so much in your life.|Sé ese amor que tanto quieres en tu vida.|Anónimo|2</item>
+        <item>Don’t be what they did to you.|No seas lo que te hicieron.|Anónimo|2</item>
+        <item>Someone’s injuries are no excuses for you to tolerate their disrespect.|Las heridas de alguien no son excusas para que toleres sus faltas de respeto.|Anónimo|2</item>
+        <item>You can’t go back and change the beginning, but you can start where you are and change the end.|No puedes volver atrás y cambiar el principio, pero puedes comenzar donde estás y cambiar el final.|Anónimo|2</item>
+        <item>To love is also not to do for others what they must do for themselves.|Amar también es no hacer por otros lo que deben hacer por sí mismos.|Anónimo|2</item>
+        <item>You shine very nice when you are happy.|Brillas muy bonito cuando estás feliz.|Anónimo|2</item>
+        <item>Choose someone who will make your life bigger and not smaller.|Elige a alguien que haga tu vida más grande y no más pequeña.|Anónimo|2</item>
+        <item>Whoever loves you, makes you love yourself.|Quien te quiere, hace que te quieras.|Anónimo|2</item>
+        <item>You will never find the love of your life, because love is not found, it is built.|Jamás encontrarás el amor de tu vida, pues el amor no se encuentra, se construye.|E. Fromm|2</item>
+        <item>Your life will change when you change, this doesn’t work by sitting around waiting for it to happen.|Tu vida cambiará cuando tú cambies, esto no funciona sentandote a esperar que suceda.|Anónimo|2</item>
+        <item>You have the right to get angry, but not to be deformed.|Tienes derecho a enojarte, pero no a deformarte.|Anónimo|2</item>
+        <item>Each stage of your life is going to require a different version of you.|Cada etapa de tu vida va a requerir una versión diferente de ti.|Anónimo|2</item>
+        <item>It does not shine by turning off others.|No se brilla apagando a los demás.|Anónimo|2</item>
+        <item>If you idealize the other you will end up hating him, for not being that perfect person that you yourself created in your head.|Si idealizas al otro terminarás odiándolo, por no ser esa persona perfecta que tú mismo creaste en tu cabeza.|Anónimo|2</item>
+        <item>The person with low self-esteem is very afraid of being left alone so he does not treat himself well.|La persona con baja autoestima, tiene mucho miedo a quedarse sola por lo que no se trata bien a sí misma.|Anónimo|2</item>
+        <item>Surround yourself with people who raise your self-esteem.|Rodéate de personas que eleven tu autoestima.|Anónimo|2</item>
+        <item>Destroy the thoughts that destroy you.|Destruye los pensamientos que te destruyen.|Anónimo|2</item>
+        <item>Healthy love is what makes you a better person without pretending to change you.|El amor sano es el que te hace mejor persona sin pretender cambiarte.|Anónimo|2</item>
+        <item>Often we do not choose our partner well because we do not know ourselves well.|A menudo no elegimos bien a nuestra pareja porque no nos conocemos bien a nosotros mísmos.|Anónimo|2</item>
+        <item>Never doubt all the love you deserve.|Nunca dudes de todo el amor que te mereces.|Anónimo|2</item>
+        <item>Instead of looking for the right person, it’s about transforming yourself into the right person.|En vez de buscar a la persona adecuada se trata de que te transformes en la persona adecuada.|Anónimo|2</item>
+        <item>Just because the past was painful, doesn’t mean the future will be the same.|El hecho de que el pasado fue doloroso, no significa que el futuro será lo mismo.|Anónimo|2</item>
+        <item>Every person’s first love should be their own.|El primer amor de toda persona debería ser el propio.|Anónimo|2</item>
+        <item>What good is it for you to sweeten your ears, if your life is bitter.|De que te sirve que te endulce los oídos, si te amarga la vida.|Walter Riso|2</item>
+        <item>You deserve someone who feeds your self-esteem not your insecurity.|Te mereces a alguien que alimente tu autoestima no tu inseguridad.|Anónimo|2</item>
+        <item>Be happy not with anyone, but with you.|Sé feliz no con nadie, sino contigo.|Anónimo|2</item>
+        <item>Are you really happy or just smile for the selfie?|Eres realmente feliz o sólo sonríes para la selfie?|Anónimo|2</item>
+        <item>Find what makes you feel comfortable. The confidence in which you wear your clothes is what is really going to shine.|Encuentra lo que te hace sentir cómodo. La confianza en la que usas tu ropa es lo que realmente va a brillar.|Anónimo|2</item>
+        <item>If God is all you have, you have all you need.|Si Dios es todo lo que tu tienes, tienes todo lo que necesitas.|Juan 14:8|3</item>
+        <item>Lord, lead me because I can’t do this alone.|Señor, guíame porque no puedo hacer esto solo.|Proverbios|3</item>
+        <item>Our faith can move mountains.|Nuestra fe mueve montanas.|Maeto 17:20|3</item>
+        <item>Above all else, guard your heart, for everything you do flows from it.|Por encima de todo, cuida tu corazón, porque todo lo que haces fluye de él.|Proverbios 4:23|3</item>
+        <item>He will not let your foot be moved; he who keeps you will not slumber.|El no permitirá que tropieces; el que te cuida no se dormirá.|Salmos 121:3|3</item>
+        <item>As water reflects the face, so one’s life reflects the heart.|En el agua se refleja el rostro y en el corazón se refleja la persona.|Proverbios 27:29|3</item>
+        <item>A cheerful heart is good medicine, but a crushed spirit dries up the bones.|Un corazón alegre es buena medicina, pero un espíritu triste seca los huesos.|Proverbios 17:22|3</item>
+        <item>Commit to the LORD whatever you do, and he will establish your plans.|Encomienda al SEÑOR todo lo que hagas, y él establecerá tus planes.|Proverbios 16:3|3</item>
+        <item>Pride goes before destruction, a haughty spirit before a fall.|El orgullo va antes de la destrucción, un espíritu altivo antes de una caída.|Proverbios 16:18|3</item>
+        <item>A gentle answer turns away wrath, but a harsh word stirs up anger.|La respuesta amable quita la ira, pero la palabra áspera hace subir la ira.|Proverbios 15:1|3</item>
+        <item>A friend loves at all times, and a brother is born for a time of adversity.|Un amigo ama en todo momento, y un hermano nace para un momento de adversidad.|Proverbios 17:17|3</item>
+        <item>Better a small serving of vegetables with love than a fattened calf with hatred.|Más vale una pequeña ración de verdura con amor que un ternero cebado con odio.|Proverbios 15:17|3</item>
+        <item>All who are prudent act with knowledge, but fools expose their folly.|Todos los prudentes obran con conocimiento, pero los necios exponen su necedad.|Proverbios 13:16|3</item>
+        <item>The wise store up knowledge, but the mouth of a fool invites ruin.|El sabio acumula conocimiento, pero la boca del necio invita a la ruina.|Proverbios 10:14|3</item>
+        <item>To learn the truth you must long to be teachable, or you can despise correction and remain ignorant.|Para aprender la verdad, debes anhelar ser enseñable, o puedes despreciar la corrección y permanecer ignorante.|Proverbios 12:1|3</item>
+        <item>But the path of the righteous is like the light of dawn, which shines brighter and brighter until full day.|Pero el camino de los justos es como la luz de la aurora, que brilla más y más hasta el día.|Proverbios 4:18|3</item>
+        <item>Pride leads to conflict; those who take advice are wise.|El orgullo lleva al conflicto; los que aceptan consejos son sabios.|Proverbios 13:10|3</item>
+        <item>Pride comes before a disaster, but humility comes before respect.|El orgullo precede al desastre, pero la humildad precede al respeto.|Proverbios 18:12|3</item>
+        <item>Let another praise you, and not your own mouth; a stranger, and not your own lips.|Que otro te alabe, y no tu propia boca; un extraño, y no tus propios labios.|Proverbios 27:2|3</item>
+        <item>One’s pride will bring him low, but he who is lowly in spirit will obtain honor.|El orgullo de uno lo humillara, pero el que es humilde de espíritu obtendrá honor.|Proverbios 29:23|3</item>
+        <item>Those who guard their mouths and their tongues guard themselves from trouble.|Los que guardan su boca y su lengua se guardan de problemas.|Proverbios 21:23|3</item>
+        <item>Fools vent their anger, but the wise quietly hold it back.|Los necios descargan su ira, pero los sabios la contienen en silencio.|Proverbios 29:11|3</item>
+        <item>Lazy hands make for poverty, but diligent hands bring wealth.|Las manos perezosas producen pobreza, pero las manos diligentes traen riqueza.|Proverbios 10:4|3</item>
+        <item>With patience a ruler may be persuaded, and a soft tongue will break a bone.|Con paciencia se puede persuadir a un gobernante, y una lengua blanda romperá un hueso.|Proverbios 25:15|3</item>
+        <item>A peaceful heart leads to a healthy body; jealousy is like cancer in the bones.|Un corazón en paz conduce a un cuerpo sano; los celos son como cáncer en los huesos.|Proverbios 14:30|3</item>
+        <item>Iron sharpens iron, and one man sharpens another.|Hierro con hierro se afila, y un hombre se afila con otro.|Proverbios 27:17|3</item>
+        <item>Work hard and become a leader; be lazy and become a slave.|Trabaja duro y conviértete en un líder; sé flojo y conviértete en un esclavo.|Proverbios 12:24|3</item>
+        <item>Without counsel plans fail, but with many advisers they succeed.|Sin consejo los planes fracasan, pero con muchos asesores tienen éxito.|Proverbios 15:22|3</item>
+        <item>A fool takes no pleasure in understanding, but only in expressing his opinion.|Un necio no se complace en entender, sino solo en expresar su opinión.|Proverbios 18:2|3</item>
+        <item>There is a time for everything, and a season for every activity under the heavens.|Hay un tiempo para todo, y una temporada para cada actividad bajo el cielo.|Ecclesiastes 3:4|3</item>
+        <item>Do not judge, or you too will be judged.|No juzgues, o tú también serás juzgado.|Mateo 7:1|3</item>
+        <item>Guard your heart above all else, for it is the source of life.|Guarda tu corazón por encima de todo, porque es la fuente de la vida.|Proverbios 4:23|3</item>
+        <item>All hard work brings a profit, but mere talk leads only to poverty.|Todo esfuerzo vale la pena, pero quien habla y no actúa acaba en la pobreza.|Proverbios 14:23|3</item>
+        <item>Walk with the wise and become wise.|El que con sabios anda, sabio se vuelve.|Proverbios 13:20|3</item>
+        <item>Hatred stirs up conflict, but love covers over all wrongs.|El odio produce más odio, el amor todo lo perdona.|Proverbios 10:12|3</item>
+        <item>More faith and less fear.|Más fe y menos miedo.|Salmos 23:4|3</item>
+        <item>There is no fear in true love.|No hay temor en el verdadero amor.|Juan 18|3</item>
+        <item>Faith doesn’t make things easy, but it makes them possible.|La fe no hace que las cosas sean fáciles, pero hace que sean posibles.|Lucas 1:37|3</item>
+        <item>So also faith alone, if it has no works, is dead.|Así también la fe por sí sola, si no tiene obras, está muerta.|Santiago 2:17|3</item>
+        <item>What good is it to win the whole world if life is lost?|¿De qué sirve ganar el mundo entero si se pierde la vida?|Mateo 16:26|3</item>
+        <item>Let everything you do be full of love.|Deja que todo lo que hagas esté lleno de amor.|Corintios|3</item>
+        <item>Don’t pray when it rains if you don’t pray when the sun is shining.|No reces cuando llueva si no rezas cuando el sol brilla.|Satchel Paige|3</item>
+        <item>He who goes after justice and love finds life, prosperity, and honor.|El que va tras la justicia y el amor halla vida, prosperidad y honra.|Proverbios 21:21|3</item>
+        <item>In the midst of any battle, the best weapon is prayer.|En medio de cualquier batalla, la mejor arma es la oración.|Efesios|3</item>
+        <item>How can I? For the one who believes, anything is possible.|¿Cómo que si puedo? Para el que cree, todo es posible.|Marcos 9:23|3</item>
+        <item>Don’t forget God, he never forgets you.|No te olvides de Dios, él jamás se olvida de ti.|Jeremías 2:32|3</item>
+        <item>Let us not love in word and with our mouths, but with deeds and truth.|No amemos de palabra y con la boca, sino con obras y de verdad.|Juan 3:18|3</item>
+        <item>The heart of man plans his way, but the Lord establishes his steps.|Dios tiene un plan que lleva tu nombre.|Proverbios 16:9|3</item>
+        <item>Be completely humble and gentle; be patient, bearing with one another in love.|Siempre humildes y amables, pacientes, tolerantes unos con otros en amor.|Efesios 4:2|3</item>
     </string-array>
 </resources>

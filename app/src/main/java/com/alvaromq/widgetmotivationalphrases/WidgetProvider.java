@@ -40,7 +40,8 @@ public class WidgetProvider extends AppWidgetProvider {
         DbHelper dbHelper = new DbHelper(context);
         Configuration configuration = dbHelper.getConfigurations();
         String language = configuration.getLanguage();
-        Phrase phrase = isEventMainActivity != null ? dbHelper.getPhraseForId(idPhrase, language) : dbHelper.getRandomPhrase(language);
+        String idTypes = configuration.getType();
+        Phrase phrase = isEventMainActivity != null ? dbHelper.getPhraseForId(idPhrase, language) : dbHelper.getRandomPhrase(language, idTypes);
         idPhrase = phrase.getId();
 
         // Construct the RemoteViews object
@@ -74,6 +75,7 @@ public class WidgetProvider extends AppWidgetProvider {
 
         Intent intentCopy = new Intent(context, WidgetProvider.class);
         intentCopy.putExtra("phrase", phrase.getDescription());
+        intentCopy.putExtra("author", phrase.getAuthor());
         intentCopy.setAction(ACTION_COPY);
         PendingIntent pendingCopy = PendingIntent.getBroadcast(context, 0, intentCopy, PendingIntent.FLAG_UPDATE_CURRENT);
         views.setOnClickPendingIntent(R.id.btnCopy, pendingCopy);
@@ -128,10 +130,10 @@ public class WidgetProvider extends AppWidgetProvider {
 
             context.startActivity(shareIntent);
         } else if (ACTION_COPY.equals(intent.getAction())) {
-            String phrase = intent.getStringExtra("phrase");
-            Log.v("tag", phrase);
+            String text = intent.getStringExtra("phrase") + " -" + intent.getStringExtra("author");
+            Log.v("tag", text);
             ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("text",  phrase);
+            ClipData clip = ClipData.newPlainText("text",  text);
             clipboard.setPrimaryClip(clip);
             Toast.makeText(context,R.string.clipboard, Toast.LENGTH_SHORT).show();
         }

@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import androidx.annotation.Nullable;
 
 import com.alvaromq.widgetmotivationalphrases.R;
@@ -17,10 +16,13 @@ import com.alvaromq.widgetmotivationalphrases.R;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+
+
 public class DbHelper extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "db_mp2.db";
+    private static final String DATABASE_NAME = "db_mp3.db";
     private static final String TABLE_PHRASES = "phrases";
     private static final String TABLE_CONFIGURATIONS = "configurations";
     private static final String TABLE_TYPES = "types";
@@ -41,7 +43,7 @@ public class DbHelper extends SQLiteOpenHelper {
             sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_TYPES + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, DESCRIPTION_SP TEXT NOT NULL, DESCRIPTION_EN TEXT NOT NULL)");
 
             Log.v("tag", "init create table phrases");
-            sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_PHRASES + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, DESCRIPTION_SP TEXT NOT NULL, DESCRIPTION_EN TEXT NOT NULL, AUTHOR TEXT NOT NULL)");
+            sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_PHRASES + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, DESCRIPTION_SP TEXT NOT NULL, DESCRIPTION_EN TEXT NOT NULL, AUTHOR TEXT NOT NULL, TYPES INTEGER NOT NULL)");
 
             Log.v("tag", "init insert data");
             seedsTypes(sqLiteDatabase);
@@ -81,6 +83,7 @@ public class DbHelper extends SQLiteOpenHelper {
             values.put("DESCRIPTION_EN", parts[0]);
             values.put("DESCRIPTION_SP", parts[1]);
             values.put("AUTHOR", parts[2]);
+            values.put("TYPES", parts[3]);
             sqLiteDatabase.insert(TABLE_PHRASES, null, values);
         }
     }
@@ -100,9 +103,15 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
-    public Phrase getRandomPhrase(String language) {
+    public Phrase getRandomPhrase(String language, String idTypes) {
+        Log.v("tag", idTypes);
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT ID, DESCRIPTION_SP, DESCRIPTION_EN, AUTHOR FROM " + TABLE_PHRASES + " ORDER BY RANDOM() LIMIT 1", null);
+        String query = "SELECT ID, DESCRIPTION_SP, DESCRIPTION_EN, AUTHOR, TYPES FROM " + TABLE_PHRASES;
+        if (idTypes != null) {
+            query = query + " WHERE TYPES IN (" + idTypes +")";
+        }
+        query = query + " ORDER BY RANDOM() LIMIT 1";
+        Cursor cursor = db.rawQuery(query, null);
         Phrase phrase = new Phrase();
         if (cursor != null) {
             cursor.moveToFirst();
