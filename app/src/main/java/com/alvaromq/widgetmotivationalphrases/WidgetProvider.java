@@ -41,7 +41,7 @@ public class WidgetProvider extends AppWidgetProvider {
         Configuration configuration = dbHelper.getConfigurations();
         String language = configuration.getLanguage();
         String idTypes = configuration.getType();
-        Phrase phrase = isEventMainActivity != null ? dbHelper.getPhraseForId(idPhrase, language) : dbHelper.getRandomPhrase(language, idTypes);
+        Phrase phrase = isEventMainActivity != null && idPhrase > 0 ? dbHelper.getPhraseForId(idPhrase, language) : dbHelper.getRandomPhrase(language, idTypes);
         idPhrase = phrase.getId();
 
         // Construct the RemoteViews object

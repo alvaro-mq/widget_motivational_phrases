@@ -89,9 +89,10 @@ public class MainActivity extends AppCompatActivity {
 
         // ToogleButton for language
         buttonToggleGroup.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
-            if (isChecked) {
-                validateConfigurationLanguage(checkedId);
-            }
+            validateConfigurationLanguage(checkedId, isChecked);
+            /*if (isChecked) {
+
+            }*/
         });
     }
 
@@ -171,17 +172,13 @@ public class MainActivity extends AppCompatActivity {
         tvAvatarNick.setText(Utils.generateNickAvatar(phrase.getAuthor()));
     }
 
-    private void validateConfigurationLanguage(int checkedId) {
-        Configuration configuration = new Configuration();
-        if (checkedId == R.id.btnEnglish) {
-            Log.v("tag", "EN");
-            configuration.setLanguage("EN");;
-            saveConfigurationLanguage("EN");
-        }
-        if (checkedId == R.id.btnSpanish) {
-            Log.v("tag", "SP");
-            configuration.setLanguage("SP");
-            saveConfigurationLanguage("SP");
+    private void validateConfigurationLanguage(int checkedId, boolean isChecked) {
+        if (isChecked == false) {
+            MaterialButtonToggleGroup groupButton = findViewById(R.id.toggleButtonGroup);
+            groupButton.check(R.id.btnEnglish == checkedId ? R.id.btnSpanish : R.id.btnEnglish);
+            saveConfigurationLanguage(R.id.btnEnglish == checkedId ? "SP" : "EN");
+        } else {
+            saveConfigurationLanguage(R.id.btnEnglish == checkedId ? "EN" : "SP");
         }
     }
 
@@ -196,20 +193,11 @@ public class MainActivity extends AppCompatActivity {
         CheckBox checkBox = new CheckBox(this);
         Locale current = getResources().getConfiguration().locale;
         String language = current.getLanguage();
-        Log.v("tag1", current.getLanguage());
-        Log.v("tag1", type.getDescriptionSp());
-        Log.v("tagy", String.valueOf(language.equals("es")));
         String description = language.equals("es") ? type.getDescriptionSp() : type.getDescriptionEn();
-        Log.v("tagx", description);
         checkBox.setText(description);
         checkBox.setPadding(0,0,0,0);
         boolean isChecked = Arrays.asList(typesKeys).indexOf(String.valueOf(type.getId())) >= 0;
         checkBox.setChecked(isChecked);
-        /*if (Arrays.asList(typesKeys).indexOf(String.valueOf(type.getId())) >= 0) {
-            checkBox.setChecked(true);
-        } else {
-            checkBox.setChecked(false);
-        }*/
         checkBox.setId(View.generateViewId());
         checkBox.setTag(type.getId());
         checkBox.setOnClickListener(view -> {
