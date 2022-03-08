@@ -84,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                 View view = getWindow().getDecorView().findViewById(R.id.llPhrase);
                 view.post(() -> takeScreenshot(view));
             }
+        } else {
+            Phrase randomPhrase = dbHelper.getRandomPhrase(language, configuration.getType());
+            setDefaultConfiguration(randomPhrase);
         }
 
         // ToogleButton for language
