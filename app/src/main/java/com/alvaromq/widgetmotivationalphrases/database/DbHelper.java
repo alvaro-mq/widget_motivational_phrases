@@ -144,6 +144,23 @@ public class DbHelper extends SQLiteOpenHelper {
         return phrase;
     }
 
+
+    @SuppressLint("Range")
+    public ArrayList<Phrase> getPhraseAll(String language) {
+        ArrayList<Phrase> phrases = new ArrayList<Phrase>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT ID, DESCRIPTION_SP, DESCRIPTION_EN, AUTHOR FROM " + TABLE_PHRASES, null);
+        while(cursor.moveToNext()) {
+            Phrase phrase = new Phrase();
+            phrase.setId(cursor.getInt(cursor.getColumnIndex("ID")));
+            String nameColumnDescription = language.equals("SP") ? "DESCRIPTION_SP" : "DESCRIPTION_EN";
+            String description =  " “" + cursor.getString(cursor.getColumnIndex(nameColumnDescription)) + "” ";
+            phrase.setDescription(description);
+            phrase.setAuthor(cursor.getString(cursor.getColumnIndex("AUTHOR")));
+            phrases.add(phrase);
+        }
+        return phrases;
+    }
     @SuppressLint("Range")
     public Configuration getConfigurations() {
         SQLiteDatabase db = this.getReadableDatabase();

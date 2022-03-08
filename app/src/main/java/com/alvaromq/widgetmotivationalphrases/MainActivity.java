@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout layout = findViewById(R.id.groupCheckbox);
         ArrayList<Type> types = dbHelper.getTypes();
         for (Type type: types) {
-            Log.v("tag", type.getDescriptionEn());
             CheckBox checkBox = makeCheckbox(type, typesKeys);
             layout.addView(checkBox);
         }
@@ -90,9 +89,6 @@ public class MainActivity extends AppCompatActivity {
         // ToogleButton for language
         buttonToggleGroup.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
             validateConfigurationLanguage(checkedId, isChecked);
-            /*if (isChecked) {
-
-            }*/
         });
     }
 
@@ -222,7 +218,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.itemListPhrases) {
+            startActivity(new Intent(this, PhrasesList.class));
             return true;
         }
 

@@ -15,4 +15,6 @@
     <string name="refresh">Actualizar</string>
     <string name="share">Compartir</string>
     <string name="clipboard">Copiado al portapapeles</string>
+    <string name="phrases_list">Listado de frases</string>
+    <string name="about">Acerda de</string>
 </resources>

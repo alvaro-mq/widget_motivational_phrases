@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhraseItem">
+    <TextView
+        android:id="@+id/tvNickAvatarItem"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:text="AB"
+        android:textSize="80dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/circle_avatar_item"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/tvAuthorItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNickAvatarItem"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/bad_script"
+        android:text="@string/author"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tvDescriptionItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAuthorItem"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:layout_marginHorizontal="10dp"
+        android:fontFamily="@font/bad_script"
+        android:text="@string/phrase"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+</RelativeLayout>
