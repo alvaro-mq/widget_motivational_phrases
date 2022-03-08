@@ -9,9 +9,14 @@ import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.widget.RemoteViews;
 import android.widget.Toast;
+
+import androidx.annotation.RequiresApi;
 
 import com.alvaromq.widgetmotivationalphrases.database.Configuration;
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
@@ -34,7 +39,6 @@ public class WidgetProvider extends AppWidgetProvider {
         }
     }
 
-
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId, Boolean isEventMainActivity) {
         DbHelper dbHelper = new DbHelper(context);
@@ -50,7 +54,6 @@ public class WidgetProvider extends AppWidgetProvider {
         views.setTextViewText(R.id.tvAuthor, phrase.getAuthor());
         views.setTextViewText(R.id.tvNick, Utils.generateNick(phrase.getAuthor()));
         views.setTextViewText(R.id.tvNickAvatar, Utils.generateNickAvatar(phrase.getAuthor()));
-
         // Create an intent to launch MainActivity
         PendingIntent pendingIntentMainActivity = makeIntentForMainActivity(context, phrase, ACTION_OPEN_MAIN_ACTIVITY);
         views.setOnClickPendingIntent(R.id.tvDescription, pendingIntentMainActivity);
@@ -64,14 +67,6 @@ public class WidgetProvider extends AppWidgetProvider {
         // Create an intent to launch MainActivity share
         PendingIntent pendingIntentMainActivityShare = makeIntentForMainActivity(context, phrase, ACTION_SHARE_MAIN_ACTIVITY);
         views.setOnClickPendingIntent(R.id.btnShare, pendingIntentMainActivityShare);
-
-        /*Intent intentShare = new Intent(context, WidgetProvider.class);
-        intentShare.putExtra("phrase", phrase.getDescription());
-        intentShare.setAction(ACTION_SHARE);
-        PendingIntent pendingShare = PendingIntent.getBroadcast(context, 0, intentShare, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        PendingIntent.getActivity(context, 0, intentShare, PendingIntent.FLAG_UPDATE_CURRENT);
-        views.setOnClickPendingIntent(R.id.btnShare, pendingShare);*/
 
         Intent intentCopy = new Intent(context, WidgetProvider.class);
         intentCopy.putExtra("phrase", phrase.getDescription());

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WidgetMotivationalPhrases</string>
+    <string name="app_name">Motivational Phrases</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="author">Author</string>
@@ -10,7 +10,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="appwidget_text">Cuanta vida te esta costando tu trabajo? </string>
     <string name="add_widget">Add widget</string>
-    <string name="app_widget_description">This is an app widget description</string>
+    <string name="app_widget_description">Esta es una app que te recuerda frases motivacionales.</string>
     <string name="nick">\@author</string>
     <string name="phrase">Motivational Phrase</string>
     <string name="english">English</string>
