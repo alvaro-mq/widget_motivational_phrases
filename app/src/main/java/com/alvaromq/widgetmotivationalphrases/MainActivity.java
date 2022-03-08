@@ -1,6 +1,8 @@
 package com.alvaromq.widgetmotivationalphrases;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -223,6 +225,17 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.itemListPhrases) {
             startActivity(new Intent(this, PhrasesList.class));
+            return true;
+        } else if (id == R.id.itemAbout) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setView(R.layout.dialog);
+            builder.setTitle(R.string.about);
+            builder.setCancelable(true);
+            builder.setPositiveButton(
+                    R.string.ok,
+                    (dialog, id1) -> dialog.cancel());
+            AlertDialog alert = builder.create();
+            alert.show();
             return true;
         }
 
