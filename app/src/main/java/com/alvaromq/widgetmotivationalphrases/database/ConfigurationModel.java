@@ -2,7 +2,7 @@ package com.alvaromq.widgetmotivationalphrases.database;
 
 import java.io.Serializable;
 
-public class Configuration implements Serializable {
+public class ConfigurationModel implements Serializable {
     public String getLanguage() {
         return language;
     }
@@ -23,6 +23,6 @@ public class Configuration implements Serializable {
 
     private String type;
 
-    public Configuration() {
+    public ConfigurationModel() {
     }
 }

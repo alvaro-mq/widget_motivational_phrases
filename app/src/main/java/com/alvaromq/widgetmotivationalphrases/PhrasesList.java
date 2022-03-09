@@ -2,20 +2,14 @@ package com.alvaromq.widgetmotivationalphrases;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.ui.AppBarConfiguration;
 
-import com.alvaromq.widgetmotivationalphrases.database.Configuration;
+import com.alvaromq.widgetmotivationalphrases.database.ConfigurationModel;
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
 import com.alvaromq.widgetmotivationalphrases.database.Phrase;
-import com.alvaromq.widgetmotivationalphrases.database.Type;
 import com.alvaromq.widgetmotivationalphrases.databinding.ActivityPhrasesListBinding;
-import com.google.android.material.button.MaterialButtonToggleGroup;
 
 import java.util.ArrayList;
 
@@ -32,7 +26,7 @@ public class PhrasesList extends AppCompatActivity {
         setSupportActionBar(binding.toolbar);
 
         DbHelper dbHelper = new DbHelper(PhrasesList.this);
-        Configuration configuration = dbHelper.getConfigurations();
+        ConfigurationModel configuration = dbHelper.getConfigurations();
         String language = configuration.getLanguage();
         ArrayList<Phrase> phrases = dbHelper.getPhraseAll(language);
         /*for (Phrase phrase: phrases) {

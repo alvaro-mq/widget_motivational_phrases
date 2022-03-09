@@ -9,8 +9,6 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
-import com.alvaromq.widgetmotivationalphrases.database.Configuration;
-
 public class UpdateService extends IntentService {
     private static String ACTION_EVENT = "ACTION_EVENT";
     /**

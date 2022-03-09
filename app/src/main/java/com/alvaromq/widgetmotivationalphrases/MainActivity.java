@@ -4,11 +4,12 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.alvaromq.widgetmotivationalphrases.database.Configuration;
+import com.alvaromq.widgetmotivationalphrases.database.ConfigurationModel;
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
 import com.alvaromq.widgetmotivationalphrases.database.Phrase;
 import com.alvaromq.widgetmotivationalphrases.database.Type;
@@ -61,8 +62,18 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
+        LinearLayout llPhrase = findViewById(R.id.llPhrase);
+        int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (currentNightMode) {
+            case Configuration.UI_MODE_NIGHT_NO:
+                llPhrase.setBackgroundResource(R.drawable.roundstyle_activity);
+                break;
+            case Configuration.UI_MODE_NIGHT_YES:
+                llPhrase.setBackgroundResource(R.drawable.roundstyle);
+                break;
+        }
         DbHelper dbHelper = new DbHelper(MainActivity.this);
-        Configuration configuration = dbHelper.getConfigurations();
+        ConfigurationModel configuration = dbHelper.getConfigurations();
         String language = configuration.getLanguage();
         String[] typesKeys = configuration.getType().split(",");
 
@@ -120,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     private void shareImage(Bitmap bitmap) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("image/jpeg");
-        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
+        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "MotivationalPhrase", null);
         Uri uri = Uri.parse(path);
         intent.putExtra(Intent.EXTRA_STREAM, uri);
         this.startActivity(Intent.createChooser(intent, "Select"));

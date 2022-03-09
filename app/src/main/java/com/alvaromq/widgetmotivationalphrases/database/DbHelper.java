@@ -162,12 +162,12 @@ public class DbHelper extends SQLiteOpenHelper {
         return phrases;
     }
     @SuppressLint("Range")
-    public Configuration getConfigurations() {
+    public ConfigurationModel getConfigurations() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT LANGUAGE, TYPE FROM " + TABLE_CONFIGURATIONS, null);
         String language = "";
         String type = "";
-        Configuration configuration = new Configuration();
+        ConfigurationModel configuration = new ConfigurationModel();
         if (cursor != null) {
             cursor.moveToFirst();
             language = cursor.getString(cursor.getColumnIndex("LANGUAGE"));

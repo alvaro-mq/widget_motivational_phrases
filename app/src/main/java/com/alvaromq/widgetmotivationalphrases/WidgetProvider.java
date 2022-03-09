@@ -9,16 +9,11 @@ import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
 import android.util.Log;
-import android.util.TypedValue;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
-
-import com.alvaromq.widgetmotivationalphrases.database.Configuration;
+import com.alvaromq.widgetmotivationalphrases.database.ConfigurationModel;
 import com.alvaromq.widgetmotivationalphrases.database.DbHelper;
 import com.alvaromq.widgetmotivationalphrases.database.Phrase;
 
@@ -42,7 +37,7 @@ public class WidgetProvider extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId, Boolean isEventMainActivity) {
         DbHelper dbHelper = new DbHelper(context);
-        Configuration configuration = dbHelper.getConfigurations();
+        ConfigurationModel configuration = dbHelper.getConfigurations();
         String language = configuration.getLanguage();
         String idTypes = configuration.getType();
         Phrase phrase = isEventMainActivity != null && idPhrase > 0 ? dbHelper.getPhraseForId(idPhrase, language) : dbHelper.getRandomPhrase(language, idTypes);
