@@ -67,7 +67,7 @@ public class WidgetProvider extends AppWidgetProvider {
         intentCopy.putExtra("phrase", phrase.getDescription());
         intentCopy.putExtra("author", phrase.getAuthor());
         intentCopy.setAction(ACTION_COPY);
-        PendingIntent pendingCopy = PendingIntent.getBroadcast(context, 0, intentCopy, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingCopy = PendingIntent.getBroadcast(context, 0, intentCopy, PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.btnCopy, pendingCopy);
 
         appWidgetManager.updateAppWidget(appWidgetId, views);
@@ -132,7 +132,7 @@ public class WidgetProvider extends AppWidgetProvider {
     private static PendingIntent makeIntentRefresh(Context context) {
         Intent intentRefresh = new Intent(context, WidgetProvider.class);
         intentRefresh.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
-        PendingIntent pendingSync = PendingIntent.getBroadcast(context,0, intentRefresh, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingSync = PendingIntent.getBroadcast(context,0, intentRefresh, PendingIntent.FLAG_IMMUTABLE);
         return pendingSync;
     }
 
@@ -141,7 +141,7 @@ public class WidgetProvider extends AppWidgetProvider {
         intentActivityMain.setAction(action);
         intentActivityMain.putExtra("phrase", phrase.getDescription());
         intentActivityMain.putExtra("author", phrase.getAuthor());
-        PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intentActivityMain, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent2 = PendingIntent.getActivity(context, 0, intentActivityMain, PendingIntent.FLAG_IMMUTABLE);
         return  pendingIntent2;
     }
 }
